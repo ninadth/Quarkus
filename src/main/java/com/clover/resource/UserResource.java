@@ -23,6 +23,10 @@ import org.jboss.logging.Logger;
 
 
 
+
+
+
+
 @Path("/user-resource")
 public class UserResource {
 	
@@ -36,7 +40,7 @@ public class UserResource {
 
 	/**
 	 * @author Ninad Thakre
-	 *  @apiNote THIS API FOR CREATE USER
+	 * @apiNote THIS API FOR CREATE USER
 	 * @param user
 	 * @return
 	 * @throws Exception
@@ -83,7 +87,7 @@ public class UserResource {
 
     /**
      * @apiNote THIS API FOR GET ALL USERS
-     * @return
+     * @return    
      */
     //Get-All-user
     @GET

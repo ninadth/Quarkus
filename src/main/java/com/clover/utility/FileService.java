@@ -28,6 +28,7 @@ public class FileService {
     public List<FileEntity> getAllFiles() {
         return fileRepository.listAll();
     }
+    
 
     // Other file-related operations
 }

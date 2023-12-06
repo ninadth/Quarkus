@@ -1,6 +1,7 @@
 package com.clover.entity;
 
 import java.util.Arrays;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -20,7 +21,7 @@ public class FileEntity {
     @Lob
     @Column(columnDefinition = "BLOB")
     private byte[] fileContent;
-
+   
 	public Long getId() {
 		return id;
 	}
@@ -36,6 +37,7 @@ public class FileEntity {
 	public void setFileContent(byte[] fileContent) {
 		this.fileContent = fileContent;
 	}
+	
 
 	public FileEntity(Long id, byte[] fileContent) {
 		super();

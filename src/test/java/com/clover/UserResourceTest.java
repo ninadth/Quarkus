@@ -2,11 +2,11 @@ package com.clover;
 
 
 import io.quarkus.test.junit.QuarkusTest;
-import io.quarkus.test.junit.mockito.InjectMock;
 import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
-import jakarta.ws.rs.core.Response;
+
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -25,13 +25,10 @@ import java.net.URI;
 import java.time.LocalDate;
 import java.util.Date;
 
-
-
-
 @QuarkusTest
 public class UserResourceTest {
 	
-}
+
 //	@Inject
 //    UserResource userResource; // Mocking the UserService dependency
 //	
@@ -109,30 +106,30 @@ public class UserResourceTest {
 //        // Clean up or additional assertions as needed
 //    }
 //    
-//    @Test
-//    public void testGetById() {
-//        // Mock user data for testing
-//        User mockUser = new User();
-//        mockUser.setid(1);
-//        mockUser.setUserName("testUser");
-//
-//        // Save the mock user to the database or in-memory storage
-//        // You may use TestEntityManager or other mechanisms for testing persistence
-//
-//        // Perform a GET request to the getById endpoint
-//        io.restassured.response.Response response = given()
-//            .pathParam("id", mockUser.getid())
-//            .when()
-//            .get("/getById/{id}");
-//
-//        // Assert the response status code
-//        response.then().statusCode(200); // HTTP 200 OK
-//
-//        // Assert the response body
-//        response.then().body("id", equalTo(mockUser.getid()));
-//        response.then().body("userName", equalTo(mockUser.getUserName()));
-//    }}
-//    
+    @Test
+    public void testGetById() {
+        // Mock user data for testing
+        User mockUser = new User();
+        mockUser.setid(1);
+        mockUser.setUserName("testUser");
+
+        // Save the mock user to the database or in-memory storage
+        // You may use TestEntityManager or other mechanisms for testing persistence
+
+        // Perform a GET request to the getById endpoint
+        io.restassured.response.Response response = given()
+            .pathParam("id", mockUser.getid())
+            .when()
+            .get("/getById/{id}");
+
+        // Assert the response status code
+        response.then().statusCode(200); // HTTP 200 OK
+
+        // Assert the response body
+        response.then().body("id", equalTo(mockUser.getid()));
+        response.then().body("userName", equalTo(mockUser.getUserName()));
+    }}
+    
 //    @Test
 //    public void testGetUserCount() {
 //        // Mock the user count for testing
@@ -149,7 +146,7 @@ public class UserResourceTest {
 //        // Assert the response body
 //        response.then().body(equalTo(" NUMBER OF USER IN DATBASE: " + mockUserCount));
 //    }
-//	
+//    }
 //	  @Test
 //    public void testGetUsersInRange() {
 //        // Mock query parameters for testing
